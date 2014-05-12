@@ -49,4 +49,12 @@ Release/
 Release_ARM/
 Release_Win32/
 Release_x64/
+*.Makefile
+moz.build
+sources.json
+*.mozbuild
+src/commit.h
+*~
+.gclient
+angle_internal
 TestResults.qpa
