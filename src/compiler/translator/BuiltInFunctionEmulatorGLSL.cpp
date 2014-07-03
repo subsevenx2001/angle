@@ -110,6 +110,7 @@ void InitBuiltInAtanFunctionEmulatorForGLSLWorkarounds(BuiltInFunctionEmulator *
         emu->addEmulatedFunctionWithDependency(floatFuncId, EOpAtan, floatVec, floatVec,
                                                ss.str().c_str());
     }
+    emu->addEmulatedFunction(EOpFaceForward, float1, float1, float1, "#define webgl_faceforward_emu(N, I, Nref) (((Nref) * (I) < 0.0) ? (N) : -(N))");
 }
 
 // Emulate built-in functions missing from GLSL 1.30 and higher
