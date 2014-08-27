@@ -2649,9 +2649,8 @@ gl::Error Renderer9::createRenderTarget(int width,
 
         if (FAILED(result))
         {
-            ASSERT(result == D3DERR_OUTOFVIDEOMEMORY || result == E_OUTOFMEMORY);
-            return gl::Error(GL_OUT_OF_MEMORY, "Failed to create render target, result: 0x%X.",
-                             result);
+            ASSERT(result == D3DERR_OUTOFVIDEOMEMORY || result == E_OUTOFMEMORY || result == E_INVALIDARG);
+            return gl::Error(GL_OUT_OF_MEMORY, "Failed to create render target, result: 0x%X.", result);
         }
 
         if (requiresInitialization)
