@@ -24,6 +24,7 @@ class NativeWindow11 : public NativeWindowD3D
   public:
     NativeWindow11(EGLNativeWindowType window) : NativeWindowD3D(window) {}
 
+#ifdef ANGLE_ENABLE_D3D11
     virtual HRESULT createSwapChain(ID3D11Device *device,
                                     IDXGIFactory *factory,
                                     DXGI_FORMAT format,
@@ -32,6 +33,7 @@ class NativeWindow11 : public NativeWindowD3D
                                     UINT samples,
                                     IDXGISwapChain **swapChain) = 0;
     virtual void commitChange() = 0;
+#endif
 };
 }  // namespace rx
 
