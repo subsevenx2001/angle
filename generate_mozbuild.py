@@ -220,8 +220,8 @@ def generate_platform_sources(target=None):
                     "--format=dump_mozbuild " +
                     "--ignore-environment " +
                     "--depth=. " +
-                    "-Ibuild/standalone.gypi " + 
-                    "-Ibuild/common.gypi " +
+                    "-Igyp/standalone.gypi " + 
+                    "-Igyp/common.gypi " +
                     "-DOS=%s " % plat +
                     "-DMSVS_VERSION=2012 " +
                     "-Dangle_standalone=1 " +
@@ -230,7 +230,7 @@ def generate_platform_sources(target=None):
                     "-Dangle_enable_hlsl=1 " +
                     "-Drelease_symbols=true " +
                     targetarg +
-                    "build/ANGLE.gyp")
+                    "gyp/ANGLE.gyp")
     if res != 0:
       print 'Failed to generate sources for ' + plat
       continue
