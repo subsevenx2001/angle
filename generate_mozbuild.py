@@ -197,6 +197,8 @@ nonunified_source_files = [
   "NativeWindow11Win32.cpp", # because of include <initguid.h>
   "EmulateGLFragColorBroadcast.cpp", # because of redefinition of "constructIndexNode"
   "DisplayD3D.cpp", # because some windows include need to be first line
+  "RewriteTexelFetchOffset.cpp",
+  "ShaderLang.cpp",
 ]
 
 def force_non_unified(s):
